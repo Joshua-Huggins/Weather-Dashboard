@@ -4,23 +4,89 @@
     <head>
         <meta charset="UTF-8">
         <title>Weather Dashboard</title>
-        <link rel="stylesheet" href="#placeholder">
+        <link rel="stylesheet" href="./assets/style.css">
+        <meta name="viewport" content="width=device-width, inital-scale=1.0">
     </head>
     <Body>
-        <header>
-            <h1>Weather Dashboard</h1>
-        </header>
-        <div>
-            <!--This will be the container for the search-->
-        </div>
-        <div>
-            <!--this will be for searching a city-->
-        </div>
-        <div>
+        <h1>Weather Dashboard</h1>
+          <!--This will be the container for the search-->
+        <div class="container">
+            <div class="weather-input">
+                <h2>Enter a City Name</h3>
+                 <!--this will be for searching a city-->
+                    <input type="text" placeholder="Search for a City">
+                    <button class="search-btn">Search</button>
+                    <div class="seperator"></div>
+                <button type="submit">Clear History</button>
+            </div>
             <!--output data from search here-->
+            <div class="weather-data">
+            <div class="current-weather">
+                <div class="more-details">
+                    <h2>City Name (Date)</h2>
+                    <h4>Temperature:</h4>
+                    <h4>Wind:</h4>
+                    <h4>Humidity:</h4>
+                    <h4>UV:</h4>
+                </div>
+                <div class="icon">
+                    <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                    <h4>Current Conditions:</h4>
+                </div>
+            </div>
+            <!--five day forcast should go here-->
+            <div class="five-day-forecast">
+                <h2>5 Day Forecast</h2>
+                <ul class="weather-cards">
+                    <!--Day 1-->
+                    <li class="card">
+                        <h3>(test date)</h3>
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                        <h4>Temp: Test</h4>
+                        <h4>Wind: Test</h4>
+                        <h4>Humidity: Test</h4>
+                        <h4>UV: Test</h4>
+                    </li>
+                     <!--Day 2-->
+                     <li class="card">
+                        <h3>(test date)</h3>
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                        <h4>Temp: Test</h4>
+                        <h4>Wind: Test</h4>
+                        <h4>Humidity: Test</h4>
+                        <h4>UV: Test</h4>
+                    </li>
+                     <!--Day 3-->
+                     <li class="card">
+                        <h3>(test date)</h3>
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                        <h4>Temp: Test</h4>
+                        <h4>Wind: Test</h4>
+                        <h4>Humidity: Test</h4>
+                        <h4>UV: Test</h4>
+                    </li>
+                     <!--Day 4-->
+                     <li class="card">
+                        <h3>(test date)</h3>
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                        <h4>Temp: Test</h4>
+                        <h4>Wind: Test</h4>
+                        <h4>Humidity: Test</h4>
+                        <h4>UV: Test</h4>
+                    </li>
+                     <!--Day 5-->
+                     <li class="card">
+                        <h3>(test date)</h3>
+                        <img src="https://openweathermap.org/img/wn/10d@4x.png" alt="weather-icon">
+                        <h4>Temp: Test</h4>
+                        <h4>Wind: Test</h4>
+                        <h4>Humidity: Test</h4>
+                        <h4>UV: Test</h4>
+                    </li>
+                </ul>
+            </div>
+            </div>
         </div>
-        <Script>
-        <!--placeholer for js script-->
-        </Script>                
+        <Script src="./assets/javaScript.js"></Script>                
     </Body>
 </html>
