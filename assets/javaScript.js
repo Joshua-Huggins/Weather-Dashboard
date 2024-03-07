@@ -1,8 +1,12 @@
 // variables needed from html
 const cityInputE1 = document.querySelector(".city-input");
 const SearchBtn = document.querySelector(".search-btn");
+const ClearBtn = document.querySelector('#clear-history')
 const currentWeather = document.querySelector(".current-weather")
 const weatherCards = document.querySelector(".weather-cards");
+const historyCities = document.querySelector("#History")
+
+
 const ApiKey = "70a4af09920edce5e3b0c7aabf7674b1" // Api key for openweathermap
 
 // this will create the weather cards for the forecast.
@@ -72,7 +76,7 @@ const WeatherDetails = (cityName, lat, lon) => {
 const CityCord = () => {
     const cityName = cityInputE1.value.trim();
     if(!cityName) return; 
-
+    const storedCities = JSON.parse(localStorage.getItem("cities")) || [];
     console.log(cityName); // test to see user input is being used as value
 
     // We need this in order to get the Coords for the actual forecast
@@ -86,7 +90,28 @@ const CityCord = () => {
     }).catch(() => {
         alert("An error occurred while fetching the coordinates.");
     });
+
+    // come back to fix this does not seem to be pushing into local storage
+    storedCities.push(cityName);
+    localStorage.setItem("cities", JSON.stringify(storedCities));
+
+    displaySearchHistory();
 } 
+
+function displaySearchHistory() {
+    const storedCities = JSON.parse(localStorage.getItem("cities")) || [];
+    var pastSearchesEl = document.getElementById('History');
+
+    pastSearchesEl.innerHTML ='';
+
+    for (i = 0; i < storedCities.length; i++) {
+        
+        var pastCityBtn = document.createElement("button");
+        pastCityBtn.textContent = `${storedCities[i].city}`;
+        pastSearchesEl.appendChild(pastCityBtn);
+    }
+    return;
+}
 
 // when search button is clicked run function CityCord to get user input.
 SearchBtn.addEventListener("click", CityCord);
